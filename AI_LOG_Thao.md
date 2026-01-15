@@ -1,4 +1,5 @@
 lộ trình 10 tuần đã có trong này giúp mình phân tích hướng làm project Human management
+
 Đúng rồi—trong **Kế hoạch triển khai PRO192** đã có sẵn **lộ trình 10 tuần** theo milestone M1→M8 và các mốc Progress Test/Final. 
 
 Thay vì mình “đẻ” lại timeline, mình sẽ **map (ghép) đề tài HRM** vào đúng các yêu cầu/mốc trong plan để bạn làm đúng hướng chấm.
