@@ -1,11 +1,10 @@
+
+Bạn đã nói:
 tôi đang làm về Hệ thống quản lý nhân viên công ty tôi đang học môn Object-Oriented Programming tôi chưa học java mới học C chuyển qua và với môn học này tôi sẽ làm dự án trên và tôi cần Proposal.md          # Bản mô tả tính năng cho dự án và tôi được phép dùng AI code
+ChatGPT đã nói:
+Dưới đây là nội dung Proposal.md cho dự án Hệ thống Quản lý Nhân viên Công ty, viết đơn giản – dễ hiểu, phù hợp cho sinh viên mới chuyển từ C sang Java, và định hướng OOP.
+Bạn có thể copy nguyên văn lưu thành file Proposal.md trong GitHub.
 
-Dưới đây là **nội dung Proposal.md** cho **dự án Hệ thống Quản lý Nhân viên Công ty**, viết **đơn giản – dễ hiểu**, **phù hợp cho sinh viên mới chuyển từ C sang Java**, và **định hướng OOP**.
-Bạn có thể **copy nguyên văn** lưu thành file `Proposal.md` trong GitHub.
-
----
-
-```md
 # Employee Management System (EMS)
 ## Proposal – Bản mô tả dự án
 
@@ -137,15 +136,249 @@ Dự án giúp sinh viên làm quen với Java và tư duy OOP thông qua một 
 Hệ thống có thể mở rộng thêm giao diện hoặc kết nối cơ sở dữ liệu trong tương lai.
 
 ---
-```
+Nếu bạn muốn:
+
+✨ Rút gọn Proposal cho nộp nhanh
+
+✨ Viết bằng tiếng Anh
+
+✨ Sơ đồ class UML
+
+✨ Gợi ý code Java cho từng class
+
+👉 chỉ cần nói “làm tiếp phần …”, mình sẽ hướng dẫn từng bước như thầy dạy.
+
+Bạn đã nói:
+# Giới thiệu dự án, thành viên, hướng dẫn chạy file jar
+tôi cần một file readme  
+ChatGPT đã nói:
+Dưới đây là nội dung file README.md hoàn chỉnh, viết đơn giản – dễ hiểu, phù hợp cho dự án OOP Java (Console) và sinh viên mới học Java.
+Bạn có thể copy toàn bộ và lưu thành README.md.
+
+# Employee Management System (EMS)
+
+## 1. Giới thiệu dự án
+**Employee Management System (EMS)** là hệ thống quản lý nhân viên công ty, được xây dựng dưới dạng **ứng dụng Java Console**.  
+Dự án được thực hiện trong khuôn khổ môn **Object-Oriented Programming (OOP)** nhằm giúp sinh viên:
+
+- Làm quen với ngôn ngữ **Java**
+- Hiểu và áp dụng tư duy **lập trình hướng đối tượng**
+- Xây dựng một chương trình quản lý đơn giản nhưng đầy đủ chức năng
+- Biết cách tổ chức dự án và làm việc nhóm trên GitHub
+
+> Sinh viên được phép sử dụng **AI hỗ trợ viết code**, tuy nhiên phải hiểu rõ và giải thích được chương trình.
 
 ---
 
-Nếu bạn muốn:
+## 2. Chức năng chính
+- Thêm, sửa, xóa nhân viên
+- Hiển thị danh sách nhân viên
+- Tìm kiếm nhân viên theo mã hoặc tên
+- Quản lý phòng ban
+- Tính lương cơ bản cho nhân viên
+- Lưu và đọc dữ liệu từ file
 
-* ✨ **Rút gọn Proposal cho nộp nhanh**
-* ✨ **Viết bằng tiếng Anh**
-* ✨ **Sơ đồ class UML**
-* ✨ **Gợi ý code Java cho từng class**
+---
 
-👉 chỉ cần nói **“làm tiếp phần …”**, mình sẽ hướng dẫn **từng bước như thầy dạy**.
+## 3. Công nghệ sử dụng
+- Ngôn ngữ: **Java**
+- Kiểu ứng dụng: **Console Application**
+- IDE: IntelliJ IDEA / Eclipse / VS Code
+- Quản lý mã nguồn: **GitHub**
+
+---
+
+## 4. Thành viên nhóm
+
+| Họ tên | Vai trò |
+|------|--------|
+| Mai Hoàng Đăng | Phát triển chức năng quản lý nhân viên |
+| Thành viên 2 | Quản lý phòng ban, menu chương trình |
+
+*(Có thể chỉnh sửa lại cho đúng nhóm của bạn)*
+
+---
+
+## 5. Cấu trúc thư mục (tham khảo)
+
+EmployeeManagementSystem/
+│
+├── src/
+│ ├── main/
+│ │ ├── Main.java
+│ │ ├── Employee.java
+│ │ ├── Department.java
+│ │ ├── EmployeeManager.java
+│
+├── data/
+│ └── employees.txt
+│
+├── EMS.jar
+├── README.md
+└── Proposal.md
+
+
+---
+
+## 6. Hướng dẫn chạy file `.jar`
+
+### 6.1 Yêu cầu
+- Máy đã cài **Java JDK 8 trở lên**
+- Kiểm tra bằng lệnh:
+```bash
+java -version
+6.2 Cách chạy chương trình
+Bước 1: Mở Command Prompt / Terminal
+Windows: Win + R → gõ cmd
+
+Mac/Linux: mở Terminal
+
+Bước 2: Di chuyển đến thư mục chứa file .jar
+cd đường_dẫn_tới_thư_mục
+Ví dụ:
+
+cd Desktop/EmployeeManagementSystem
+Bước 3: Chạy chương trình
+java -jar EMS.jar
+7. Ghi chú
+Dữ liệu nhân viên sẽ được lưu vào file text
+
+Khi chạy lại chương trình, dữ liệu cũ vẫn được giữ
+
+Dự án có thể mở rộng thêm:
+
+Giao diện đồ họa (JavaFX)
+
+Kết nối cơ sở dữ liệu (MySQL)
+
+8. Kết luận
+Dự án giúp sinh viên áp dụng kiến thức OOP vào bài toán thực tế, làm quen với Java và quy trình phát triển phần mềm cơ bản.
+
+
+---
+
+Nếu bạn muốn mình:
+- ✨ Viết **README bằng tiếng Anh**
+- ✨ Rút gọn cho **nộp bài nhanh**
+- ✨ Chỉnh lại cho **đúng rubric giảng viên**
+- ✨ Viết thêm **hướng dẫn build file JAR**
+
+👉 chỉ cần nói **“làm tiếp phần …”**, mình làm tiếp ngay 👍
+Bạn đã nói:
+chưa có cách chạy file jar nên hãy tạo cho tôi 2 cái kia trước 
+ChatGPT đã nói:
+Ok 👍 mình sẽ tạo file README.md chỉ gồm 2 phần đúng như bạn yêu cầu:
+✅ Giới thiệu dự án
+✅ Thành viên nhóm
+⛔ Chưa có phần chạy file .jar
+
+Bạn copy nguyên văn nội dung dưới đây lưu thành README.md.
+
+# Employee Management System (EMS)
+
+## 1. Giới thiệu dự án
+**Employee Management System (EMS)** là hệ thống quản lý nhân viên công ty được xây dựng dưới dạng **ứng dụng Java Console**.  
+Dự án được thực hiện trong khuôn khổ môn **Object-Oriented Programming (OOP)**, dành cho sinh viên mới chuyển từ ngôn ngữ **C sang Java**.
+
+Mục tiêu của dự án:
+- Làm quen với ngôn ngữ lập trình **Java**
+- Hiểu và áp dụng các khái niệm **lập trình hướng đối tượng (OOP)** như:
+  - Class & Object  
+  - Encapsulation  
+  - Inheritance  
+  - Polymorphism
+- Xây dựng một chương trình quản lý nhân viên đơn giản nhưng thực tế
+- Rèn luyện kỹ năng làm việc nhóm và quản lý mã nguồn bằng GitHub
+
+> Sinh viên được phép sử dụng **AI hỗ trợ viết code**, tuy nhiên phải hiểu rõ và giải thích được chương trình.
+
+---
+
+## 2. Thành viên nhóm
+
+| Họ tên | Vai trò |
+|------|--------|
+| Mai Hoàng Đăng | Phát triển chức năng chính, thiết kế class |
+| Thành viên 2 | Hỗ trợ xử lý nghiệp vụ và kiểm thử |
+
+*(Thông tin thành viên có thể chỉnh sửa cho đúng với nhóm thực tế)*
+
+---
+Khi nào bạn:
+
+✔️ Build xong file .jar
+
+✔️ Muốn thêm hướng dẫn chạy
+
+✔️ Muốn bổ sung chức năng dự án
+
+✔️ Muốn README chuẩn để nộp giảng viên
+
+👉 chỉ cần nói: “thêm phần … vào README”, mình làm tiếp đúng format cho bạn.
+
+Bạn đã nói:
+cách tạo bảng trong github cho thành viên 
+ChatGPT đã nói:
+Trên GitHub, bảng thành viên được tạo bằng Markdown table. Cách làm rất đơn giản 👍
+Mình hướng dẫn từng bước + ví dụ để bạn dùng ngay.
+
+1. Cú pháp tạo bảng trong GitHub (Markdown)
+| Cột 1 | Cột 2 | Cột 3 |
+|------|------|------|
+| Dữ liệu 1 | Dữ liệu 2 | Dữ liệu 3 |
+| Dữ liệu 4 | Dữ liệu 5 | Dữ liệu 6 |
+📌 Lưu ý quan trọng
+
+Dòng thứ 2 (|------|) là bắt buộc
+
+Số dấu | ở các dòng phải bằng nhau
+
+Không cần căn lề, GitHub sẽ tự căn
+
+2. Bảng thành viên nhóm (dùng cho README.md)
+👉 Copy đoạn này là dùng được ngay
+
+| STT | Họ và tên | Vai trò |
+|----|----------|--------|
+| 1 | Mai Hoàng Đăng | Trưởng nhóm – Thiết kế hệ thống |
+| 2 | Nguyễn Văn A | Phát triển chức năng |
+📌 Hiển thị trên GitHub sẽ giống như bảng thật.
+
+3. Căn lề bảng (không bắt buộc)
+| STT | Họ và tên | Vai trò |
+|:---:|:--------|:-------|
+| 1 | Mai Hoàng Đăng | Trưởng nhóm |
+| 2 | Nguyễn Văn A | Thành viên |
+:---: → căn giữa
+
+:--- → căn trái
+
+---: → căn phải
+
+4. Cách chỉnh sửa trực tiếp trên GitHub
+Mở repository trên GitHub
+
+Bấm vào README.md
+
+Chọn Edit (✏️)
+
+Dán bảng Markdown vào
+
+Commit changes
+
+5. Gợi ý bảng đẹp cho bài nộp
+## Thành viên nhóm
+
+| STT | Họ và tên | MSSV | Vai trò |
+|:--:|----------|------|--------|
+| 1 | Mai Hoàng Đăng | 22xxxxxx | Trưởng nhóm |
+| 2 | Nguyễn Văn A | 22yyyyyy | Thành viên |
+Nếu bạn muốn mình:
+
+✨ Chỉnh bảng theo chuẩn giảng viên
+
+✨ Thêm email / GitHub link
+
+✨ Viết bằng tiếng Anh
+
+👉 chỉ cần gửi tên + số thành viên, mình làm bảng hoàn chỉnh cho bạn.
