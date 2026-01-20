@@ -1,144 +1,179 @@
-# ĐỀ XUẤT DỰ ÁN
+# ĐỀ XUẤT DỰ ÁN  
+## Hệ thống Quản lý Nhân sự (Human Resource Management System – HRMS)
+
+---
 
 ## 1. Tên dự án
+**Hệ thống Quản lý Nhân sự (HRMS)**  
+Ứng dụng Java chạy trên **console**, áp dụng các nguyên lý **Lập trình Hướng Đối Tượng (OOP)**.
 
-**Hệ thống Quản lý Nhân sự (Human Resource Management System – HRMS)**
+---
 
 ## 2. Vấn đề cần giải quyết
+Việc quản lý nhân viên theo phương pháp thủ công:
+- Tốn nhiều thời gian
+- Dễ xảy ra sai sót
+- Khó mở rộng và thống kê dữ liệu
 
-Việc quản lý nhân viên thủ công tốn nhiều thời gian và dễ xảy ra sai sót.
+Dự án này nhằm xây dựng một hệ thống HRMS đơn giản bằng Java, hỗ trợ:
+- Quản lý nhân viên và phòng ban
+- Chấm công, nghỉ phép
+- Tính lương và báo cáo lương cơ bản
 
-Dự án này nhằm xây dựng một ứng dụng **Java chạy trên console**, giúp quản lý nhân viên và phòng ban, hỗ trợ **tính lương** và **tạo các báo cáo lương cơ bản**, dựa trên các nguyên lý **Lập trình Hướng Đối Tượng (OOP)**.
+---
 
 ## 3. Đối tượng sử dụng
+- **Nhân viên Nhân sự (HR)**
+- **Trưởng phòng / Quản lý phòng ban**
+- **Quản trị viên hệ thống**
 
-* Nhân viên nhân sự (HR)
-* Trưởng phòng / Quản lý phòng ban
-* Quản trị viên hệ thống
+---
 
 ## 4. Phạm vi & Thiết kế tổng thể
 
-### 4.1. Các thực thể chính (Entities)
+### 4.1 Các thực thể chính (Entities)
 
-* `Employee` (lớp trừu tượng)
-* `FullTimeEmployee` (Nhân viên toàn thời gian)
-* `PartTimeEmployee` (Nhân viên bán thời gian)
-* `InternEmployee` (Thực tập sinh)
-* `Department` (Phòng ban)
-* `Attendance / WorkLog` (Chấm công / Nhật ký làm việc)
+- `Employee` (lớp trừu tượng)
+- `FullTimeEmployee` – Nhân viên toàn thời gian
+- `PartTimeEmployee` – Nhân viên bán thời gian
+- `InternEmployee` – Thực tập sinh
+- `Department` – Phòng ban
+- `WorkLog` / `Attendance` – Nhật ký làm việc
+- `LeaveOfAbsence` – Nghỉ phép
 
-### 4.2. Các trường dữ liệu (Yêu cầu tối thiểu)
+---
 
-#### Employee (Nhân viên)
+### 4.2 Các trường dữ liệu (Yêu cầu tối thiểu)
 
-* `id` – mã nhân viên
-* `fullName` – họ và tên
-* `dateOfBirth` – ngày sinh
-* `phone` – số điện thoại
-* `email`
-* `departmentId` – mã phòng ban
+#### Employee (Nhân viên – abstract)
+- `id` – mã nhân viên  
+- `fullName` – họ và tên  
+- `dateOfBirth` – ngày sinh  
+- `phone` – số điện thoại  
+- `email`  
+- `departmentId` – mã phòng ban  
 
-#### FullTimeEmployee (Toàn thời gian)
+#### FullTimeEmployee
+- `baseSalary` – lương cơ bản  
+- `bonus` – thưởng  
+- `allowance` – phụ cấp  
 
-* `baseSalary` – lương cơ bản
-* `bonus` – thưởng
-* `allowance` – phụ cấp
+#### PartTimeEmployee
+- `hourlyRate` – lương theo giờ  
+- `hoursWorked` – số giờ làm việc  
 
-#### PartTimeEmployee (Bán thời gian)
+#### InternEmployee
+- `stipend` / `allowance` – trợ cấp  
 
-* `hourlyRate` – lương theo giờ
-* `hoursWorked` – số giờ làm việc
+#### Department
+- `id` – mã phòng ban  
+- `name` – tên phòng ban  
+- `available` – số lượng nhân viên  
 
-#### InternEmployee (Thực tập sinh)
+#### WorkLog
+- `employeeId` – mã nhân viên  
+- `workDate` – ngày làm việc  
+- `hoursWorked` – số giờ làm  
 
-* `stipend / allowance` – trợ cấp
+#### LeaveOfAbsence
+- `employeeId`  
+- `fromDate`  
+- `toDate`  
+- `reason`  
+- `status` – trạng thái (Pending / Approved / Rejected)
 
-#### Department (Phòng ban)
+---
 
-* `id` – mã phòng ban
-* `name` – tên phòng ban
-* `available` - số lượng nhân viên 
+### 4.3 Thiết kế lớp (Cấu trúc OOP)
 
-#### WorkLog (Nhật ký làm việc)
-
-* `employeeId` – mã nhân viên
-* `workDate` – ngày làm việc
-* `hoursWorked` – số giờ làm việc
-
-### 4.3. Thiết kế lớp (Cấu trúc OOP)
-
-Hệ thống được thiết kế với **11 lớp chính**, áp dụng các nguyên lý **kế thừa**, **trừu tượng** và **đóng gói**.
+Hệ thống gồm **11 lớp chính**, áp dụng:
+- Kế thừa (Inheritance)
+- Trừu tượng (Abstraction)
+- Đóng gói (Encapsulation)
+- Đa hình (Polymorphism)
 
 #### Nhóm lớp thực thể
-
-* `Employee` (abstract)
-* `FullTimeEmployee`
-* `PartTimeEmployee`
-* `InternEmployee`
-* `Department`
-* `WorkLog`
+- `Employee` (abstract)
+- `FullTimeEmployee`
+- `PartTimeEmployee`
+- `InternEmployee`
+- `Department`
+- `WorkLog`
+- `Leave`
 
 #### Nhóm lớp xử lý nghiệp vụ
+- `HRService`
+  - `List<Employee>`
+  - `List<Department>`
+  - `List<WorkLog>`
+  - `List<Leave>`
 
-**EmployeeManager**
-
-* Thêm, sửa, xóa nhân viên
-* Tìm kiếm và hiển thị nhân viên
-
-**DepartmentManager**
-
-* Thêm, sửa, xóa phòng ban
-* Gán nhân viên vào phòng ban
-
-**PayrollService**
-
-* Tính lương cho từng nhân viên
-* Tính tổng lương toàn công ty
-* Báo cáo lương theo phòng ban
+**Chức năng xử lý:**
+- `add / remove / search employee`
+- `assign department`
+- `calculate payroll`
+- `approve leave`
 
 #### Nhóm lớp hệ thống
+- `FileHandler`
+  - `employeeFile`
+  - `departmentFile`
+  - `workLogFile`
 
-**FileHandler**
+**Chức năng:**
+- `saveEmployees()`
+- `loadEmployees()`
+- `saveWorkLogs()`
+- `loadLeaves()`
 
-* Lưu và đọc dữ liệu từ file CSV/TXT
+#### Lớp quản trị
+- `Administrator`
+  - `username`
+  - `password`
 
-**MainApp**
-
-* Menu console
-* Điểm bắt đầu chạy chương trình
+---
 
 ## 5. Các chức năng chính
 
-### 5.1. Quản lý nhân viên
+### 5.1 Quản lý nhân viên
+- Thêm nhân viên mới  
+  - Toàn thời gian / Bán thời gian / Thực tập sinh
+- Cập nhật thông tin nhân viên
+- Xóa nhân viên theo mã
+- Hiển thị danh sách nhân viên
+- Tìm kiếm nhân viên theo:
+  - Tên
+  - Phòng ban
 
-* Thêm nhân viên mới (chọn loại: toàn thời gian / bán thời gian / thực tập sinh)
-* Cập nhật thông tin nhân viên
-* Xóa nhân viên theo mã
-* Hiển thị danh sách nhân viên
-* Tìm kiếm nhân viên theo tên hoặc phòng ban
+---
 
-### 5.2. Quản lý phòng ban
+### 5.2 Quản lý phòng ban
+- Thêm phòng ban
+- Cập nhật phòng ban
+- Xóa phòng ban
+- Gán nhân viên vào phòng ban
 
-* Thêm phòng ban
-* Cập nhật phòng ban
-* Xóa phòng ban
-* Gán nhân viên vào phòng ban
+---
 
-### 5.3. Tính lương & Báo cáo
+### 5.3 Tính lương & Báo cáo
+- Tính lương cho từng nhân viên
+- Tính tổng quỹ lương công ty
+- Báo cáo lương theo phòng ban
 
-* Tính lương cho từng nhân viên
-* Tính tổng quỹ lương của công ty
-* Báo cáo lương theo từng phòng ban
+---
 
-### 5.4. Lưu trữ dữ liệu
+### 5.4 Lưu trữ dữ liệu
+- Lưu dữ liệu vào file **CSV / TXT**
+- Tải dữ liệu khi chương trình khởi động
+- Chức năng xử lý file sẽ được mở rộng ở các giai đoạn sau
 
-* Lưu dữ liệu nhân viên và phòng ban vào file (CSV/TXT)
-* Tải dữ liệu từ file khi chương trình khởi động
-* Chức năng xử lý file sẽ được hoàn thiện ở các giai đoạn sau
+---
 
 ## 6. Kết quả mong đợi
+- File **`.jar`** chạy được
+- Mã nguồn Java có cấu trúc rõ ràng
+- **Sơ đồ lớp (UML)**
+- **Lưu đồ (Flowchart)**
+- File **`AI_LOG.md`** ghi lại quá trình sử dụng AI
 
-* File `.jar` chạy được
-* Mã nguồn Java có cấu trúc rõ ràng
-* Sơ đồ lớp (UML) và lưu đồ (flowchart)
-* File **AI_LOG.md** ghi lại quá trình sử dụng AI
+---
